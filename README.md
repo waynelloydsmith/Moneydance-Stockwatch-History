@@ -1,0 +1,22 @@
+## Moneydance-Stockwatch-History
+- loads stockwatch security price history files into moneydance
+- you also need runScripts-share.py and definitions.py from the Moneydance-Stockwatch-dayly repository
+- The csv data files must be manually down loaded from www.stockwatch.com 
+- and placed in the directory /opt/moneydance/scripts/tmp/Stockwatch
+- goto www.stockwatch.com and click on quotes->download quotes-> enter Symbol -> select year -> select csv format -> submit
+- you must have a stockwatch account
+- one file per security . data can be all the dailey close values for that security for one year . 
+- file name can be anything that ends in .csv
+- this program processes all the .csv files in directory /opt/moneydance/scripts/tmp/Stockwatch
+- and moves them to /opt/moneydance/scripts/tmp/Done
+- Tested on Tsx , New York and Canadian Mutual funds 
+- to execute this script put it in /opt/moneydance/scripts then execute
+- runScripts-shared.py .. run this script with moneydance->window->"Show MoneyBot Console"
+- It can run many different scripts via a tree menu system.
+- open the "Run Stockwatch Update Scripts" folder.
+- select updateHistoryStockWatch.py.
+- hit the "Run Script Button" at the bottom. 
+- You can also execute this script directly without using runScripts-shared.py
+- definitions.StockwatchSymbols is used to convert the Canadian mutual fund symbol to what ever you
+- are useing in moneydance like 'BIF*CDN' -> TML202-T (Franklin Bissett Canadian Equity Fund)
+- see line 159 in updateHistoryStockWatch.py for other ticker symbol conversions like AW.UN -> AW-UN-T
